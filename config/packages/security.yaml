@@ -41,7 +41,13 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+
+        # Tout ce qui commence par /client ou /commande nécessite d'être connecté
+        - { path: ^/client, roles: ROLE_USER }
         - { path: ^/commande, roles: ROLE_USER }
+        - { path: ^/produits, roles: ROLE_USER }
+        
+        # - { path: ^/admin, roles: ROLE_ADMIN }
 
 when@test:
     security:
